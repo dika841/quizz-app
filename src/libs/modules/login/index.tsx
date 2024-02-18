@@ -1,5 +1,5 @@
 import { Button, TextField } from "@libs/components";
-import { FC, FormEvent, ReactElement, useState } from "react";
+import { FC, FormEvent, ReactElement, useEffect, useState } from "react";
 import { userData } from "@store/store";
 import { useNavigate } from "react-router-dom";
 export const LoginModule: FC = (): ReactElement => {
@@ -17,9 +17,19 @@ export const LoginModule: FC = (): ReactElement => {
       setIsError(true);
       setMessage("Incorrect Email or Password");
     } else {
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({ email: userData.email })
+      );
       navigate("/quiz");
     }
   };
+  useEffect(() => {
+    const userData = localStorage.getItem("userData");
+    if (userData) {
+      navigate("/quiz");
+    }
+  }, [navigate]);
   return (
     <section className=" flex justify-center items-center w-full h-screen ">
       <div className="flex flex-col items-center bg-white w-full md:w-1/3 h-fit py-6 px-8 rounded-lg">
