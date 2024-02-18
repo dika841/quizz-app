@@ -65,7 +65,11 @@ export const QuestionModule: FC = (): ReactElement => {
   };
   const handleTryAgain = (): void => {
     setIsDialogShow(false);
-    localStorage.clear();
+    localStorage.removeItem("isActiveQuestion");
+    localStorage.removeItem("score");
+    localStorage.removeItem("selectedAnswer");
+    localStorage.removeItem("totalWrongAnswer");
+    localStorage.removeItem("totalCorrectAnswer");
     location.reload();
   };
   useEffect(() => {
