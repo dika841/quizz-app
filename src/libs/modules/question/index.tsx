@@ -65,13 +65,21 @@ export const QuestionModule: FC = (): ReactElement => {
   };
   const handleTryAgain = (): void => {
     setIsDialogShow(false);
-    localStorage.removeItem("isActiveQuestion");
-    localStorage.removeItem("score");
-    localStorage.removeItem("selectedAnswer");
-    localStorage.removeItem("totalWrongAnswer");
-    localStorage.removeItem("totalCorrectAnswer");
+    const itemsToRemove = [
+      "isActiveQuestion",
+      "score",
+      "selectedAnswer",
+      "totalWrongAnswer",
+      "totalCorrectAnswer",
+      "minutes",
+      "seconds",
+    ];
+    itemsToRemove.forEach((item) => localStorage.removeItem(item));
+    localStorage.setItem("minutes", "1");
+    localStorage.setItem("seconds", "0");
     location.reload();
   };
+
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       if (seconds > 0) {
@@ -97,6 +105,7 @@ export const QuestionModule: FC = (): ReactElement => {
       clearInterval(intervalRef.current);
     };
   }, [minutes, seconds]);
+
   useEffect(() => {
     //set score to local storage
     localStorage.setItem("score", JSON.stringify(score));
