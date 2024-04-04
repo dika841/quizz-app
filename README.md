@@ -1,17 +1,29 @@
-## Buat Aplikasi Kuis menggunakan teknologi React dengan kriteria sebagai berikut:
-   - Memiliki fitur login
-   - Untuk api soal bisa ambil dari https://opentdb.com/
-   - Jumlah & type soal bebas.
-   - Total soal & jumlah yang dikerjakan ditampilkan
-   - Memiliki Timer. Jumlah waktu pengerjaan kuis bebas.
-   - Satu halaman hanya menampilkan satu soal. Jadi ketika user telah memilih jawaban, langsung pindah soal.
-   - Jika timer habis, soal akan ditutup & menampilkan hasil pengerjaan (jumlah benar, jumlah salah & jumlah jawab).
-   - Ketika browser ditutup, ada mekanisme resume kuis. Bisa menggunakan localstoragebrowser untuk menyimpan data (Nilai Plus)
-   - Upload code di Github
+# Quiz App
+Hello borther, dalam repo ini terdapat beberapa fitur diantaranya : 
+- fitur login
+- fitur quiz
+- fitur resume quiz
 
-## Buat video demo aplikasi dengan spesifikasi:
-   - Demo aplikasi di seluruh halaman
-   - Penjelasan hasil pengerjaan dari setiap poin pada soal nomor 1
-   - Presentasi dengan open camera
-   - Gunakan aplikasi www.loom.com sebagai alat perekam (recording)
-   - Share LINK hasil recording pada isian yang sudah disediakan (pastikan link bisa diakses)
+
+## Package yang digunakan : 
+- Vite React JS
+- Tailwind Css
+- React Query
+- Typescript
+- react-router-dom
+- clsx
+- axios
+
+## API
+Pada Aplikasi ini, soal quiz di dapat dari 3rd party API :
+`` https://opentdb.com/ ``
+## Get started:
+1. **Clone Repository:**
+   - ``git@github.com:dika841/dot-fe-intern-quiz-app.git``
+2. **Install Depedencies:**
+   - ``yarn install``
+  
+## Start development
+- ``yarn dev``
+## Build 
+- `` yarn build``
